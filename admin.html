@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ADDY — Admin</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body class="admin-page">
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+
+    <!-- NAV -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">A</span>
+            <span>ADDY</span>
+        </a>
+
+        <a
+            href="index.html"
+            class="back-link"
+        >
+            ← View Website
+        </a>
+
+    </header>
+
+
+    <main class="admin-container">
+
+
+        <!-- LOGIN -->
+
+        <section
+            id="loginSection"
+            class="login-wrapper"
+        >
+
+            <div class="login-paper">
+
+                <div class="paper-holes">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+
+                <div class="login-content">
+
+                    <div class="admin-symbol">
+                        🔐
+                    </div>
+
+                    <span class="section-label">
+                        PRIVATE AREA
+                    </span>
+
+                    <h1>
+                        Welcome back.
+                    </h1>
+
+                    <p>
+                        Sign in to manage your
+                        ADDY library.
+                    </p>
+
+
+                    <form id="loginForm">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <input
+                            id="password"
+                            type="password"
+                            placeholder="Your password"
+                            required
+                        >
+
+
+                        <button
+                            type="submit"
+                            class="blue-button"
+                        >
+                            Sign in
+                            <span>→</span>
+                        </button>
+
+
+                        <p
+                            id="loginMessage"
+                            class="form-message"
+                        ></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section
+            id="dashboard"
+            class="dashboard hidden"
+        >
+
+
+            <div class="dashboard-top">
+
+                <div>
+
+                    <span class="section-label">
+                        ADDY ADMIN
+                    </span>
+
+                    <h1>
+                        Manage your library.
+                    </h1>
+
+                    <p>
+                        Upload and organize your study
+                        materials.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+
+            <!-- UPLOAD -->
+
+            <div class="admin-grid">
+
+                <section class="admin-paper">
+
+                    <div class="paper-holes">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+
+                    <div class="admin-paper-content">
+
+                        <div class="paper-title">
+
+                            <span class="paper-number">
+                                01
+                            </span>
+
+                            <div>
+                                <span class="section-label">
+                                    NEW MATERIAL
+                                </span>
+
+                                <h2>
+                                    Add a file
+                                </h2>
+                            </div>
+
+                        </div>
+
+
+                        <form id="uploadForm">
+
+                            <label for="fileTitle">
+                                File title
+                            </label>
+
+                            <input
+                                id="fileTitle"
+                                type="text"
+                                placeholder="e.g. Class 12 Physics Notes"
+                                required
+                            >
+
+
+                            <label for="fileCategory">
+                                Category
+                            </label>
+
+                            <select id="fileCategory">
+
+                                <option value="PDF">
+                                    PDF
+                                </option>
+
+                                <option value="DOCX">
+                                    DOCX
+                                </option>
+
+                                <option value="XLSX">
+                                    XLSX
+                                </option>
+
+                                <option value="PPTX">
+                                    PPTX
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+
+                            <label for="fileDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="fileDescription"
+                                rows="4"
+                                placeholder="A short description..."
+                            ></textarea>
+
+
+                            <label>
+                                Choose file
+                            </label>
+
+
+                            <label
+                                for="fileInput"
+                                class="drop-zone"
+                            >
+
+                                <div class="upload-icon">
+                                    ↑
+                                </div>
+
+                                <strong>
+                                    Choose a file
+                                </strong>
+
+                                <span>
+                                    PDF, DOCX, XLSX, PPTX
+                                </span>
+
+                            </label>
+
+
+                            <input
+                                id="fileInput"
+                                type="file"
+                                hidden
+                            >
+
+
+                            <div
+                                id="selectedFile"
+                                class="selected-file"
+                            >
+                                No file selected
+                            </div>
+
+
+                            <div class="progress">
+                                <div
+                                    id="progressBar"
+                                    class="progress-bar"
+                                ></div>
+                            </div>
+
+
+                            <button
+                                id="uploadButton"
+                                type="submit"
+                                class="blue-button"
+                            >
+                                Upload to ADDY
+                                <span>↑</span>
+                            </button>
+
+
+                            <p
+                                id="uploadMessage"
+                                class="form-message"
+                            ></p>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- INFO CARD -->
+
+                <aside class="admin-side">
+
+                    <div class="stats-card">
+
+                        <span class="section-label">
+                            LIBRARY
+                        </span>
+
+                        <strong id="adminFileCount">
+                            0
+                        </strong>
+
+                        <span>
+                            uploaded files
+                        </span>
+
+                    </div>
+
+
+                    <div class="hand-note">
+
+                        <span>
+                            remember
+                        </span>
+
+                        <p>
+                            Keep your notes organized.
+                            Future you will thank you. ✦
+                        </p>
+
+                        <small>
+                            — ADDY
+                        </small>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+
+            <!-- FILE MANAGEMENT -->
+
+            <section class="files-paper">
+
+                <div class="paper-holes">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+
+
+                <div class="files-paper-content">
+
+                    <div class="paper-title">
+
+                        <span class="paper-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <span class="section-label">
+                                LIBRARY
+                            </span>
+
+                            <h2>
+                                Your files
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="adminFileList"
+                        class="admin-file-list"
+                    ></div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            ADDY<span>.</span>
+        </div>
+
+        <small>
+            Private admin area
+        </small>
+
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="config.js"></script>
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
